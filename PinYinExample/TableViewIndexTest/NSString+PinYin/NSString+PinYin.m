@@ -227,6 +227,9 @@ static char firstLetterArray[HANZI_COUNT] =
 - (NSString *)getFirstLetter
 {
     NSString *words = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (words.length == 0) {
+        return nil;
+    }
     NSString *result = nil;
     unichar firstLetter = [words characterAtIndex:0];
     
